@@ -8,7 +8,14 @@ namespace Shooter.Content.Scripts.Gameplay
 {
     public class PlayerMovement: BehaviourComponent
     {
-        [SerializedField] private Rigidbody movementBody;
+        [SerializedField] private GameObject cameraTarget;
+        [SerializedField] private float moveSpeed;
+
+        public override void Start()
+        {
+            //movementBody = this.GameObject.GetComponent<Rigidbody>();
+        }
+
         public override void Update()
         {
             base.Update();
@@ -22,17 +29,27 @@ namespace Shooter.Content.Scripts.Gameplay
             var left = Input.IsKeyDown(Key.A) || Input.IsKeyDown(Key.Left);
             var right = Input.IsKeyDown(Key.D) || Input.IsKeyDown(Key.Right);
     
-            var movForward = (forward ? 1f : 0f) + (back ? -1f: 0f); 
-            var movSides = (left ? 1f : 0f) + (right ? -1f: 0f);
+            var movForward = 0f + (forward ? 1f : 0f) + (back ? -1f: 0f); 
+            var movSides = 0f + (left ? -1f : 0f) + (right ? 1f: 0f);
+            
             var movVector = new Vector2f(movSides, movForward);
             ProcessMovement(movVector);
             //
         }
-    
+
         private void ProcessMovement(Vector2f movement)
         {
-            var impulseVector = new Vector3(movement.x, movement.y, 0) * Time.DeltaTime;
-            movementBody.AddImpulse(impulseVector);
+            //GameObject.Transform.Position = 
+            var direction = cameraTarget.Transform.Forward;
+            var realVector = new Vector3(movement.x, movement.y, 0).normalized().projectOnFlat(Vector3.Up);
+            var impulseVector = new Vector3(movement.x, movement.y, 0).normalized() * Time.DeltaTime * moveSpeed;
+            if (double.IsNaN(impulseVector.x) || double.IsNaN(impulseVector.y) )
+            {
+                return;
+            }
+            var position = GameObject.Transform.Position + impulseVector;
+            GameObject.Transform.Position = position;
+            //movementBody.AddForce(impulseVector);
         }
     }
 }

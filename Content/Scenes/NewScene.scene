@@ -8,8 +8,8 @@ SerializableObjects:
   components:
   - f07ede4332e245d3ba17d24861714db3
   - fa427cae6d2c419995ebedc03e1ba2a2
-  - 1c83f1b48c6449eaafaf9d09e7be3aaa
   - 2642635134674000a030ac1d23ca3f1b
+  - 14dd9dc2c1ba4928b6d1a81fadabf017
 - !Transform
   instanceId: f07ede4332e245d3ba17d24861714db3
   gameObject: 24e938317f4242a6acfa717b9ae83e54
@@ -26,15 +26,6 @@ SerializableObjects:
   model: 48712e3d3ad4452788027686701e3cbc
   materials:
   - 9b0aca955a5a4351a1f5c4cd095ec9dd
-- !CubeCollider
-  instanceId: 1c83f1b48c6449eaafaf9d09e7be3aaa
-  gameObject: 24e938317f4242a6acfa717b9ae83e54
-  localEnabled: true
-  massPart: 1
-  size:
-    x: 200
-    y: 200
-    z: 1
 - !Rigidbody
   instanceId: 2642635134674000a030ac1d23ca3f1b
   gameObject: 24e938317f4242a6acfa717b9ae83e54
@@ -47,7 +38,12 @@ SerializableObjects:
   linearDrag: 0.05
   angularDrag: 0.05
   isStatic: true
-  ignoreGravity: true
+- !MeshCollider
+  instanceId: 14dd9dc2c1ba4928b6d1a81fadabf017
+  gameObject: 24e938317f4242a6acfa717b9ae83e54
+  localEnabled: true
+  massPart: 99999
+  model: 48712e3d3ad4452788027686701e3cbc
 - !GameObject
   instanceId: 057a6458d5134b93909da942b8d2ce97
   name: DirLight
@@ -135,3 +131,64 @@ SerializableObjects:
   moveSpeed: 150
   radius: 150
   vectorModifier: 30
+- !GameObject
+  instanceId: 61daac5fddf54ef0898826b3dbca2615
+  name: Player
+  localEnabled: true
+  transform: 558116e3d908424aafb414bbccf025ef
+  components:
+  - 558116e3d908424aafb414bbccf025ef
+  - 9f08620bb62442c19ef8cadd2fbc75e2
+  - b431898e04af43dd8a733d32262aad0a
+  - 63350fbc3a204b4daca65f4b1f877f0c
+  - f4ac09c368de4a3986c4dbd7ee6474d9
+  - a86213496c0d4136b67089db3849c9be
+- !Transform
+  instanceId: 558116e3d908424aafb414bbccf025ef
+  gameObject: 61daac5fddf54ef0898826b3dbca2615
+  Position:
+    z: 1
+  Rotation:
+    w: 1
+  Scale:
+    x: 1
+    y: 1
+    z: 1
+- !CubeCollider
+  instanceId: 9f08620bb62442c19ef8cadd2fbc75e2
+  gameObject: 61daac5fddf54ef0898826b3dbca2615
+  localEnabled: true
+  massPart: 1
+  size:
+    x: 1
+    y: 1
+    z: 1
+- !MeshComponent
+  instanceId: b431898e04af43dd8a733d32262aad0a
+  gameObject: 61daac5fddf54ef0898826b3dbca2615
+  localEnabled: true
+  model: 48712e3d3ad4452788027686701e3cbc
+  materials:
+  - 21d0d027ce40447e9af748932039a556
+- !MeshCollider
+  instanceId: 63350fbc3a204b4daca65f4b1f877f0c
+  gameObject: 61daac5fddf54ef0898826b3dbca2615
+  localEnabled: true
+  massPart: 90
+  model: 48712e3d3ad4452788027686701e3cbc
+- !PlayerMovement
+  instanceId: f4ac09c368de4a3986c4dbd7ee6474d9
+  gameObject: 61daac5fddf54ef0898826b3dbca2615
+  localEnabled: true
+  moveSpeed: 10
+- !Rigidbody
+  instanceId: a86213496c0d4136b67089db3849c9be
+  gameObject: 61daac5fddf54ef0898826b3dbca2615
+  localEnabled: true
+  mass: 1
+  inertiaTensor:
+    x: 1
+    y: 1
+    z: 1
+  linearDrag: 0.05
+  angularDrag: 0.05

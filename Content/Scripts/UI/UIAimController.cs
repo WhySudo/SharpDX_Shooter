@@ -87,7 +87,7 @@ namespace Shooter.Content.Scripts.UI
             if (EqualityComparer<T>.Default.Equals(field, value)) return false;
             field = value;
             OnPropertyChanged(propertyName);
-            Camera cam;
+            
             
             return true;
         }
