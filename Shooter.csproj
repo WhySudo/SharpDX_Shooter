@@ -38,8 +38,5 @@
 			<HintPath>$(Engine_IncludePath)\Editor.dll</HintPath>
 		</Reference>
 	</ItemGroup>
-	<ItemGroup>
-	  <Compile Remove="Content\Scripts\Gameplay\PlayerMovement.cs" />
-	</ItemGroup>
 	
 </Project>
