@@ -1,0 +1,4 @@
+ImporterVersion: 1
+Guid: 6bc357dbe46242398cfe2ef4110a9f5d
+ImportSettings: !TextureImportSettings
+  ApplyGammaCorrection: true
