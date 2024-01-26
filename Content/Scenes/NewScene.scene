@@ -82,12 +82,11 @@ SerializableObjects:
   components:
   - 26b0b3c46ce84e4192b7dc57d5be2660
   - 0b52fcee7e5042dba7d6493db17b74af
-  - 72f299141f4e4d9290bb8988c94168ef
+  - 5ba3a410bb4541be9a1cb8f544c3784b
 - !Transform
   instanceId: 26b0b3c46ce84e4192b7dc57d5be2660
   gameObject: a304daf8286e486fa0b3d3deb7704e6b
-  Position:
-    z: 4
+  parent: 558116e3d908424aafb414bbccf025ef
   Rotation:
     w: 1
   Scale:
@@ -103,10 +102,11 @@ SerializableObjects:
   aspect: 1
   near: 0.001
   far: 500
-- !EditorCameraController
-  instanceId: 72f299141f4e4d9290bb8988c94168ef
+- !CameraRotator
+  instanceId: 5ba3a410bb4541be9a1cb8f544c3784b
   gameObject: a304daf8286e486fa0b3d3deb7704e6b
   localEnabled: true
+  rotationValue: 0.005
 - !GameObject
   instanceId: 981e0c6e988c41e0b92317229cb8823d
   name: UI
@@ -146,6 +146,8 @@ SerializableObjects:
 - !Transform
   instanceId: 558116e3d908424aafb414bbccf025ef
   gameObject: 61daac5fddf54ef0898826b3dbca2615
+  children:
+  - 26b0b3c46ce84e4192b7dc57d5be2660
   Position:
     z: 1
   Rotation:
@@ -180,7 +182,7 @@ SerializableObjects:
   instanceId: f4ac09c368de4a3986c4dbd7ee6474d9
   gameObject: 61daac5fddf54ef0898826b3dbca2615
   localEnabled: true
-  moveSpeed: 10
+  moveSpeed: 3
 - !Rigidbody
   instanceId: a86213496c0d4136b67089db3849c9be
   gameObject: 61daac5fddf54ef0898826b3dbca2615
@@ -192,3 +194,4 @@ SerializableObjects:
     z: 1
   linearDrag: 0.05
   angularDrag: 0.05
+  ignoreGravity: true

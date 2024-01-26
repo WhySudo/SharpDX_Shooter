@@ -73,6 +73,7 @@ namespace Shooter.Content.Scripts.UI
                 GraphicsCore.ViewportPanel.Children.Add(_drawnWpfForm);
                 _drawnWpfForm.DataContext = this;
             });
+            DrawText = "Merhaba";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -94,7 +95,7 @@ namespace Shooter.Content.Scripts.UI
 
         public override void Update()
         {
-            DrawText = $"{1f / Time.DeltaTime}";
+            //DrawText = $"{1f / Time.DeltaTime}";
             ProcessMovement();
         }
 
