@@ -103,7 +103,8 @@ namespace Shooter.Content.Scripts.UI
             // var angle =  Math.Acos(dotProduct);
             // Logger.Log(LogType.Info,$" Angle: {dotProduct}");
 
-            return result.normalized();
+            //return result.normalized();
+            return camera.GameObject.Transform.Forward;
         }
         
         public Quaternion GetWeaponModifier()
