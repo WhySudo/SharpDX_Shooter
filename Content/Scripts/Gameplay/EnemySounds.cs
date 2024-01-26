@@ -7,9 +7,30 @@ public class EnemySounds: BehaviourComponent
 {
     [SerializedField] private Sound HitSound;
     [SerializedField] private Sound DeathSound;
-    [SerializedField] private GameObject enemyObject;
+    private Enemy _enemy;
+    private SoundSource _soundSource;
     public override void Start()
     {
         base.Start();
+        _enemy = GameObject.GetComponent<Enemy>();
+        _soundSource = GameObject.GetComponent<SoundSource>();
+        _enemy.OnDeath += OnDeath;
+        _enemy.OnHit += OnHit;
+    }
+
+    private void OnHit()
+    {
+        _soundSource.play(HitSound);
+    }
+
+    private void OnDeath()
+    {
+        _soundSource.play(DeathSound);
+    }
+
+    protected override void OnDestroy()
+    {
+        _enemy.OnDeath -= OnDeath;
+        _enemy.OnHit -= OnHit;
     }
 }

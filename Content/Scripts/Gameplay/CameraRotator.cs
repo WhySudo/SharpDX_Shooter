@@ -7,6 +7,7 @@ namespace Shooter.Content.Scripts.Gameplay
 {
     public class CameraRotator : BehaviourComponent
     {
+        [SerializedField] private GameObject weapon;
         [SerializedField] private float rotationValue;
 
 
@@ -36,8 +37,9 @@ namespace Shooter.Content.Scripts.Gameplay
             oldLocalRotation += rotationValue * mouseDelta.y;
             oldLocalRotation = MathF.Min((float)oldLocalRotation, 3.14159f/2f); // Limit vertical rotation
             oldLocalRotation = MathF.Max((float)oldLocalRotation, -3.14159f/2f); // Limit vertical rotation
-            GameObject.Transform.LocalRotation = Quaternion.FromAxisAngle(Vector3.Right, oldLocalRotation);
-            
+            var setRot =  Quaternion.FromAxisAngle(Vector3.Right, oldLocalRotation);
+            GameObject.Transform.LocalRotation = setRot;
+
         }
     }
 }

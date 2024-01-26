@@ -60,8 +60,10 @@ namespace Shooter.Content.Scripts.Gameplay.Weapon
 
         private void ProcessShoot()
         {
+            var cam = Camera.Current;
             var aimPoint = _aim.GetWeaponModifier();
-            var shootDirection = aimPoint * GameObject.Transform.Up;
+            Logger.Log(LogType.Info, $"Aim Modification: {aimPoint.ToEuler()}");
+            var shootDirection = aimPoint * GameObject.Transform.Forward;
             var shootRay = new Ray(_shootPoint.Transform.Position, shootDirection);
             if (Raycast.HitMesh(shootRay, out var result))
             {
