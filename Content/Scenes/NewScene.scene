@@ -13,12 +13,14 @@ SerializableObjects:
 - !Transform
   instanceId: f07ede4332e245d3ba17d24861714db3
   gameObject: 24e938317f4242a6acfa717b9ae83e54
+  Position:
+    z: -2
   Rotation:
     w: 1
   Scale:
     x: 200
     y: 200
-    z: 1
+    z: 3
 - !MeshComponent
   instanceId: fa427cae6d2c419995ebedc03e1ba2a2
   gameObject: 24e938317f4242a6acfa717b9ae83e54
@@ -323,7 +325,7 @@ SerializableObjects:
   instanceId: 265166676b57435fb3e843602004a0f4
   gameObject: fb8be38ab9674dd393291001c7dc3494
   localEnabled: true
-  enemyPrefab: ec6b160cc65c423f9ab8d5c33a4e7252
+  enemyPrefab: 1632f71497ab4b9b81b8552ebd9b1def
   enemysCount: 5
 - !GameObject
   instanceId: b212bdcb00f14868816b607f8e85a070

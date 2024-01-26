@@ -51,6 +51,7 @@ namespace Shooter.Content.Scripts.Gameplay
 
         private void ProcessMovement(Vector2f movement, float speedModify = 1f, bool jump = false)
         {
+            //Logger.Log(LogType.Info, $"RigidSpeed :({_rigidbody.Velocity})");
             var normalizedMov = movement.normalized();
             if (double.IsNaN(normalizedMov.x) || double.IsNaN(normalizedMov.y) )
             {
@@ -70,7 +71,7 @@ namespace Shooter.Content.Scripts.Gameplay
             var upVelocity = _rigidbody.Velocity.z;
             if (upVelocity <= detectUpSpeed && jump)
             {
-                _rigidbody.AddImpulse(Vector3.Up * jumpImpulse); 
+                //_rigidbody.AddImpulse(Vector3.Up * jumpImpulse); 
             }
             //movementBody.AddForce(impulseVector);
         }

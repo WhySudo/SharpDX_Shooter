@@ -104,7 +104,6 @@ namespace Shooter.Content.Scripts.UI
             var dotProduct = aFrom.dot(aTo);
             var angle =  Math.Acos(dotProduct);
             
-            Logger.Log(LogType.Info, $"AngleModification: {angle * 180 / 3.14159}");
             //Logger.Log(LogType.Info,$"Angle: ({angle}); Cross: {cross.x}, {cross.y}, {cross.z}");
             if (Math.Abs(dotProduct - 1f) <= aproxDelta)
             {

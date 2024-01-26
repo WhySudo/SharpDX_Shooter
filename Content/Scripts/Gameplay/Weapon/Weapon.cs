@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using Engine;
 using Engine.BaseAssets.Components;
+using LinearAlgebra;
 using Shooter.Content.Scripts.UI;
 
 namespace Shooter.Content.Scripts.Gameplay.Weapon
@@ -61,9 +62,10 @@ namespace Shooter.Content.Scripts.Gameplay.Weapon
         private void ProcessShoot()
         {
             var cam = Camera.Current;
+            //var aimPoint = Quaternion.Identity;
             var aimPoint = _aim.GetWeaponModifier();
-            Logger.Log(LogType.Info, $"Aim Modification: {aimPoint.ToEuler()}");
-            var shootDirection = aimPoint * GameObject.Transform.Forward;
+            //
+            var shootDirection = aimPoint * GameObject.Transform.Up;
             var shootRay = new Ray(_shootPoint.Transform.Position, shootDirection);
             if (Raycast.HitMesh(shootRay, out var result))
             {
