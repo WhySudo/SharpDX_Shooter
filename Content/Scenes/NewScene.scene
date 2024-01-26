@@ -93,7 +93,7 @@ SerializableObjects:
   gameObject: a304daf8286e486fa0b3d3deb7704e6b
   parent: 558116e3d908424aafb414bbccf025ef
   Position:
-    z: 0.5
+    z: 1
   Rotation:
     w: 1
   Scale:
@@ -139,9 +139,9 @@ SerializableObjects:
   instanceId: ea2e28fcee9942bab8b0477f1e00070e
   gameObject: 981e0c6e988c41e0b92317229cb8823d
   localEnabled: true
-  moveSpeed: 200
-  radius: 100
-  vectorModifier: 30
+  moveSpeed: 100
+  radius: 80
+  vectorModifier: 10
   aproxDelta: 0.01
 - !GameObject
   instanceId: 61daac5fddf54ef0898826b3dbca2615
@@ -166,9 +166,9 @@ SerializableObjects:
   Rotation:
     w: 1
   Scale:
-    x: 1
-    y: 1
-    z: 1
+    x: 0.3
+    y: 0.3
+    z: 0.3
 - !CubeCollider
   instanceId: 9f08620bb62442c19ef8cadd2fbc75e2
   gameObject: 61daac5fddf54ef0898826b3dbca2615
@@ -220,6 +220,7 @@ SerializableObjects:
   Position:
     x: 0.2
     y: 0.3
+    z: 0.5
   Rotation:
     w: 4.329780281177467E-17
     x: -4.329780281177467E-17
@@ -244,7 +245,7 @@ SerializableObjects:
   reloadRate: 0.1
   damage: 10
   UiController: 981e0c6e988c41e0b92317229cb8823d
-  _shootPoint: cc02e4964ea64803b552b302ab006ba7
+  _shootPoint: a1f86aa9e6d44d51bbd94ec3191ea9c7
   playerAvatar: 61daac5fddf54ef0898826b3dbca2615
 - !WeaponSounds
   instanceId: a64ffe8b18464bfc9f79a569fd519c95
@@ -770,7 +771,7 @@ SerializableObjects:
   transform: f6f82365e7cb4c0c83e40bcef9287254
   components:
   - f6f82365e7cb4c0c83e40bcef9287254
-  - 96b2950ea55e4da492d6e796e59ee3c6
+  - 2e42afdbbbb549519452912a53644e09
 - !Transform
   instanceId: f6f82365e7cb4c0c83e40bcef9287254
   gameObject: cc02e4964ea64803b552b302ab006ba7
@@ -784,10 +785,9 @@ SerializableObjects:
     x: 0.1
     y: 0.1
     z: 0.1
-- !MeshComponent
-  instanceId: 96b2950ea55e4da492d6e796e59ee3c6
+- !ShootPointPosition
+  instanceId: 2e42afdbbbb549519452912a53644e09
   gameObject: cc02e4964ea64803b552b302ab006ba7
   localEnabled: true
-  model: 48712e3d3ad4452788027686701e3cbc
-  materials:
-  - 21d0d027ce40447e9af748932039a556
+  target: a304daf8286e486fa0b3d3deb7704e6b
+  targetDistance: 0.5

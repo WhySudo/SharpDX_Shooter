@@ -11,7 +11,7 @@ public class WeaponLight : BehaviourComponent
     public override void Start()
     {
         base.Start();
-        lightEnabled = false;
+        lightEnabled = true;
     }
 
     public override void Update()

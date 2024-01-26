@@ -87,6 +87,25 @@ namespace Shooter.Content.Scripts.UI
                 //Logger.Log(LogType.Info,$"ScreenSize: {GraphicsCore.ViewportPanel.ActualWidth}, {GraphicsCore.ViewportPanel.ActualHeight}");
             });
         }
+
+        public Vector3 GetModifiedForward()
+        {
+            var aimPoint = GetAimPixelPoint();
+            var camera = Camera.Current;
+            var camForward = camera.GameObject.Transform.Forward * vectorModifier;
+            var modificationX = camera.GameObject.Transform.Right * aimX / radius;
+            var modificationY = camera.GameObject.Transform.Up * aimY / radius;
+            var result = camForward + modificationX + modificationY;
+            
+            // var cameraPos = camera.GameObject.Transform.Position;
+            // var aimWorld = cameraPos - camera.ScreenToWorld(aimPoint);
+            // var dotProduct = aimWorld.dot( camera.GameObject.Transform.Forward);
+            // var angle =  Math.Acos(dotProduct);
+            // Logger.Log(LogType.Info,$" Angle: {dotProduct}");
+
+            return result.normalized();
+        }
+        
         public Quaternion GetWeaponModifier()
         {
             UpdateScreenSize();
@@ -186,6 +205,7 @@ namespace Shooter.Content.Scripts.UI
 
             AimX = setPos.x;
             AimY = setPos.y;
+            var cam = Camera.Current;
         }
 
         private Vector2f GetRandomDirection()

@@ -78,17 +78,42 @@ namespace Shooter.Content.Scripts.Gameplay.Weapon
         {
             var cam = Camera.Current;
             //var aimPoint = Quaternion.Identity;
-            var aimPoint = _aim.GetWeaponModifier().inverse();
+            var aimPoint = _aim.GetWeaponModifier();
+            var realForward = _aim.GetModifiedForward();
+            var camRay = new Ray(cam.GameObject.Transform.Position, realForward);
+            var setPointToFocus = new Vector3();
+            // if (Raycast.HitMesh(camRay, out var camResult))
+            // {
+            //     setPointToFocus = camResult.HitPoint;
+            // }
+            // else
+            // {
+            //     Logger.Log(LogType.Info, "Camera hasn't shoot anything");
+            //     return;
+            // }
+
+            var direction = setPointToFocus - _shootPoint.Transform.Position;
             //
-            var shootDirection = aimPoint * _shootPoint.Transform.Forward;
-            var shootRay = new Ray(_shootPoint.Transform.Position, shootDirection);
-            if (Raycast.HitMesh(shootRay, out var result))
+            //var shootDirection = aimPoint * _shootPoint.Transform.Up;
+            var shootDirection = aimPoint*direction.normalized();
+            
+            Logger.Log(LogType.Info, $"shootdir : {realForward}");
+            //var shootRay = new Ray(_shootPoint.Transform.Position, shootDirection);
+            if (Raycast.HitMesh(camRay, out var camResult))
             {
-                var enemyHit = result.HitObject.GetComponent<Enemy>();
+                Logger.Log(LogType.Info,camResult.HitObject.Name);
+                var enemyHit = camResult.HitObject.GetComponent<Enemy>();
                 if (enemyHit != null)
                 {
                     enemyHit.TakeDamage(damage);
                     Logger.Log(LogType.Info, "Enemy shoot!");
+                }
+
+                var selfHit = camResult.HitObject.GetComponent<PlayerMovement>();
+                if (selfHit != null)
+                {
+                    var dist = cam.GameObject.Transform.Position - camResult.HitPoint;
+                    Logger.Log(LogType.Info, $"Self shoot Distance: {dist.magnitude()}!");
                 }
             }
         }
