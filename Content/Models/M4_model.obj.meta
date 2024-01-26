@@ -1,0 +1,13 @@
+ImporterVersion: 3
+Guid: 9f860d1b42034ab893c1e75c93b38853
+SubAssets:
+  ? Item1: Engine.AssetsData.MaterialData, Engine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    Item2: DefaultMaterial
+  : 3fd2ca5a655e48d1b78a88371e9ae3d2
+  ? Item1: Engine.AssetsData.MaterialData, Engine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    Item2: m
+  : e7a533a296da4847927d1cf502ae2b45
+ImportSettings: !ModelImportSettings
+  MeshMaterialsOverride:
+    M4_M4_0: e7a533a296da4847927d1cf502ae2b45
+    M4_Magazine_M4_Magazine_1: e7a533a296da4847927d1cf502ae2b45
