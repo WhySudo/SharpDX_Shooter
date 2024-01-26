@@ -78,7 +78,6 @@ SerializableObjects:
     x: 1
     y: 1
     z: 1
-  shadowSize: 4096
 - !GameObject
   instanceId: a304daf8286e486fa0b3d3deb7704e6b
   name: Camera
@@ -196,6 +195,9 @@ SerializableObjects:
     z: 1
   linearDrag: 0.05
   angularDrag: 0.05
+  freezeRotationX: true
+  freezeRotationY: true
+  freezeRotationZ: true
 - !GameObject
   instanceId: 74836d04cb5147daa06722c8b0232109
   name: Weapon
@@ -250,6 +252,7 @@ SerializableObjects:
   instanceId: b32bb50de4be4cebb993333ead651c09
   gameObject: 74836d04cb5147daa06722c8b0232109
   localEnabled: true
+  volume: 1
 - !GameObject
   instanceId: d940274480e64050a4c1b2fc3fb428f9
   name: PlayerView
@@ -282,6 +285,7 @@ SerializableObjects:
   transform: 06129bc073f54593930be2e7e72a28eb
   components:
   - 06129bc073f54593930be2e7e72a28eb
+  - 2b1c98d0aa4145dfa41b90bea2f3d183
 - !Transform
   instanceId: 06129bc073f54593930be2e7e72a28eb
   gameObject: a1f86aa9e6d44d51bbd94ec3191ea9c7
@@ -295,6 +299,15 @@ SerializableObjects:
     x: 1
     y: 1
     z: 1
+- !PointLight
+  instanceId: 2b1c98d0aa4145dfa41b90bea2f3d183
+  gameObject: a1f86aa9e6d44d51bbd94ec3191ea9c7
+  localEnabled: true
+  brightness: 10
+  Color:
+    x: 1
+  radius: 4
+  intensity: 0.4
 - !GameObject
   instanceId: fb8be38ab9674dd393291001c7dc3494
   name: Spawner
@@ -325,7 +338,7 @@ SerializableObjects:
   instanceId: 265166676b57435fb3e843602004a0f4
   gameObject: fb8be38ab9674dd393291001c7dc3494
   localEnabled: true
-  enemyPrefab: 1632f71497ab4b9b81b8552ebd9b1def
+  enemyPrefab: 964b6ef82bc94e3b91057e3376ffb719
   spawnRadius: 24
   spawnHeight: 30
 - !GameObject
@@ -517,7 +530,7 @@ SerializableObjects:
   uiObject: 981e0c6e988c41e0b92317229cb8823d
 - !GameObject
   instanceId: f25db1daa21e471092d4830e49f61516
-  name: Plane
+  name: Wall
   localEnabled: true
   transform: fbe5af8910754c458d642da0c9882254
   components:
@@ -568,7 +581,7 @@ SerializableObjects:
     z: 1
 - !GameObject
   instanceId: d6403aa5130e4171ada356753f431992
-  name: Plane
+  name: Wall
   localEnabled: true
   transform: 13333e95f9ce4efc86e147786e274d32
   components:
@@ -619,7 +632,7 @@ SerializableObjects:
     z: 1
 - !GameObject
   instanceId: 22f5ffd71a2a4e01be2affa4fe141077
-  name: Plane
+  name: Wall
   localEnabled: true
   transform: 3fd335719a0e4ca590c577253ae78b14
   components:
@@ -672,7 +685,7 @@ SerializableObjects:
     z: 1
 - !GameObject
   instanceId: decc7767ba4e480ebb254089be623a3e
-  name: Plane
+  name: Wall
   localEnabled: true
   transform: cf7fe337c98a459ab65a6bfb0e6432a7
   components:

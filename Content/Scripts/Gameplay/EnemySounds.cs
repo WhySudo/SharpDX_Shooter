@@ -20,12 +20,12 @@ public class EnemySounds: BehaviourComponent
 
     private void OnHit()
     {
-        _soundSource.play(HitSound);
+        _soundSource.Play(HitSound);
     }
 
     private void OnDeath()
     {
-        _soundSource.play(DeathSound);
+        _soundSource.Play(DeathSound);
     }
 
     protected override void OnDestroy()

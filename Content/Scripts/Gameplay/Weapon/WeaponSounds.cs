@@ -19,7 +19,7 @@ namespace Shooter.Content.Scripts.Gameplay.Weapon
 
         private void OnShoot()
         {
-            _soundSource.play(shootSound);
+            _soundSource.Play(shootSound);
         }
 
         protected override void OnDestroy()

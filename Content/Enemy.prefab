@@ -1,21 +1,21 @@
 ﻿!PrefabData
 SerializableObjects:
 - !GameObject
-  instanceId: d7d2885f3cbd413497a766d43344abe5
+  instanceId: 3d0e2764079d4f5fa706c33bb756c963
   name: Enemy
   localEnabled: true
-  transform: 43211b90e36e460ab9677bae9882ebc8
+  transform: a1dd0b3f66894b78ac57a4fdb79c9124
   components:
-  - 43211b90e36e460ab9677bae9882ebc8
-  - cb8b695a6a69428bb5f1c6e284485a13
-  - 03ca9795fee443b4af1b60be30830259
-  - 32c132a56881464c9d448a225ecf164b
-  - 061897953e8b4b748e7138d3c1023f48
-  - 4d0041aceaf644e1b424f6f7798e82ac
-  - 98a2474213ca4ede97756742364c5dcc
+  - a1dd0b3f66894b78ac57a4fdb79c9124
+  - ebca15099d2940e593a8ba255bb817a5
+  - 1f581a4e5fab4de79af84cfe56797a4e
+  - 8003f17396eb4a55aaa790841a98ff1e
+  - ac7b2e7ed5624dc9a2d2079d2d5d7c48
+  - 70de32ef477b46c4be8389b2686206aa
+  - 998b506bd17e4a449c9449fa1e2eae9c
 - !Transform
-  instanceId: 43211b90e36e460ab9677bae9882ebc8
-  gameObject: d7d2885f3cbd413497a766d43344abe5
+  instanceId: a1dd0b3f66894b78ac57a4fdb79c9124
+  gameObject: 3d0e2764079d4f5fa706c33bb756c963
   Position:
     x: 20
     z: 2
@@ -26,13 +26,13 @@ SerializableObjects:
     y: 1
     z: 1
 - !Enemy
-  instanceId: cb8b695a6a69428bb5f1c6e284485a13
-  gameObject: d7d2885f3cbd413497a766d43344abe5
+  instanceId: ebca15099d2940e593a8ba255bb817a5
+  gameObject: 3d0e2764079d4f5fa706c33bb756c963
   localEnabled: true
   MaxHealth: 100
 - !Rigidbody
-  instanceId: 03ca9795fee443b4af1b60be30830259
-  gameObject: d7d2885f3cbd413497a766d43344abe5
+  instanceId: 1f581a4e5fab4de79af84cfe56797a4e
+  gameObject: 3d0e2764079d4f5fa706c33bb756c963
   localEnabled: true
   mass: 1
   inertiaTensor:
@@ -42,15 +42,15 @@ SerializableObjects:
   linearDrag: 0.05
   angularDrag: 0.05
 - !MeshComponent
-  instanceId: 32c132a56881464c9d448a225ecf164b
-  gameObject: d7d2885f3cbd413497a766d43344abe5
+  instanceId: 8003f17396eb4a55aaa790841a98ff1e
+  gameObject: 3d0e2764079d4f5fa706c33bb756c963
   localEnabled: true
   model: 48712e3d3ad4452788027686701e3cbc
   materials:
   - 21d0d027ce40447e9af748932039a556
 - !CubeCollider
-  instanceId: 061897953e8b4b748e7138d3c1023f48
-  gameObject: d7d2885f3cbd413497a766d43344abe5
+  instanceId: ac7b2e7ed5624dc9a2d2079d2d5d7c48
+  gameObject: 3d0e2764079d4f5fa706c33bb756c963
   localEnabled: true
   massPart: 1
   size:
@@ -58,13 +58,14 @@ SerializableObjects:
     y: 1
     z: 1
 - !EnemySounds
-  instanceId: 4d0041aceaf644e1b424f6f7798e82ac
-  gameObject: d7d2885f3cbd413497a766d43344abe5
+  instanceId: 70de32ef477b46c4be8389b2686206aa
+  gameObject: 3d0e2764079d4f5fa706c33bb756c963
   localEnabled: true
   HitSound: 77e0d3fef48946949f9c03f4489682db
   DeathSound: 1a7f2f5e6a3c4326859a0df223b23fcd
 - !SoundSource
-  instanceId: 98a2474213ca4ede97756742364c5dcc
-  gameObject: d7d2885f3cbd413497a766d43344abe5
+  instanceId: 998b506bd17e4a449c9449fa1e2eae9c
+  gameObject: 3d0e2764079d4f5fa706c33bb756c963
   localEnabled: true
+  volume: 1
 rootTransformIndex: 1
