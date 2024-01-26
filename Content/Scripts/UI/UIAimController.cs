@@ -62,6 +62,10 @@ namespace Shooter.Content.Scripts.UI
             }
         }
 
+        public void SetKills(int count)
+        {
+            DrawText = $"Kills: {count}";
+        }
         public Vector2 GetAimPixelPoint()
         {
             var pixelY = aimY + (height/2);
@@ -132,7 +136,7 @@ namespace Shooter.Content.Scripts.UI
                 width = (float)_drawnWpfForm.Width;
                 height = (float)_drawnWpfForm.Height;
             });
-            DrawText = "Merhaba";
+            
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

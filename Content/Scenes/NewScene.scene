@@ -18,8 +18,8 @@ SerializableObjects:
   Rotation:
     w: 1
   Scale:
-    x: 100
-    y: 100
+    x: 50
+    y: 50
     z: 3
 - !MeshComponent
   instanceId: fa427cae6d2c419995ebedc03e1ba2a2
@@ -326,8 +326,8 @@ SerializableObjects:
   gameObject: fb8be38ab9674dd393291001c7dc3494
   localEnabled: true
   enemyPrefab: 1632f71497ab4b9b81b8552ebd9b1def
-  spawnRadius: 50
-  spawnHeight: 40
+  spawnRadius: 24
+  spawnHeight: 30
 - !GameObject
   instanceId: b212bdcb00f14868816b607f8e85a070
   name: SpawnPoint
@@ -513,3 +513,213 @@ SerializableObjects:
   instanceId: 194b85f2364f40bd91d0b50abb2b2d7c
   gameObject: 9c14fbc8fd5648d0b319382cb0328c0c
   localEnabled: true
+  spawner: fb8be38ab9674dd393291001c7dc3494
+  uiObject: 981e0c6e988c41e0b92317229cb8823d
+- !GameObject
+  instanceId: f25db1daa21e471092d4830e49f61516
+  name: Plane
+  localEnabled: true
+  transform: fbe5af8910754c458d642da0c9882254
+  components:
+  - fbe5af8910754c458d642da0c9882254
+  - 4e80d08e133d4197b8ff9c7cde571f95
+  - 2e8ce8bf3edb40b28f9e0fdb7d6743e7
+  - 63b18b910e04423a9b1085b7c78bb7fe
+- !Transform
+  instanceId: fbe5af8910754c458d642da0c9882254
+  gameObject: f25db1daa21e471092d4830e49f61516
+  Position:
+    x: -26.5
+    z: -5
+  Rotation:
+    w: 0.7071067811865476
+    y: 0.7071067811865476
+  Scale:
+    x: 20
+    y: 50
+    z: 3
+- !MeshComponent
+  instanceId: 4e80d08e133d4197b8ff9c7cde571f95
+  gameObject: f25db1daa21e471092d4830e49f61516
+  localEnabled: true
+  model: 48712e3d3ad4452788027686701e3cbc
+  materials:
+  - 9b0aca955a5a4351a1f5c4cd095ec9dd
+- !Rigidbody
+  instanceId: 2e8ce8bf3edb40b28f9e0fdb7d6743e7
+  gameObject: f25db1daa21e471092d4830e49f61516
+  localEnabled: true
+  mass: 1
+  inertiaTensor:
+    x: 1
+    y: 1
+    z: 1
+  linearDrag: 0.05
+  angularDrag: 0.05
+  isStatic: true
+- !CubeCollider
+  instanceId: 63b18b910e04423a9b1085b7c78bb7fe
+  gameObject: f25db1daa21e471092d4830e49f61516
+  localEnabled: true
+  massPart: 1
+  size:
+    x: 1
+    y: 1
+    z: 1
+- !GameObject
+  instanceId: d6403aa5130e4171ada356753f431992
+  name: Plane
+  localEnabled: true
+  transform: 13333e95f9ce4efc86e147786e274d32
+  components:
+  - 13333e95f9ce4efc86e147786e274d32
+  - adb8dbdf48ba46e6bc8897b2f53a78ed
+  - 18fa11527a1c4663819a62063eaf10f1
+  - 6ea3c5298faf49629f75a697cf6dd054
+- !Transform
+  instanceId: 13333e95f9ce4efc86e147786e274d32
+  gameObject: d6403aa5130e4171ada356753f431992
+  Position:
+    x: 26.5
+    z: -5
+  Rotation:
+    w: 0.7071067811865476
+    y: 0.7071067811865476
+  Scale:
+    x: 20
+    y: 50
+    z: 3
+- !MeshComponent
+  instanceId: adb8dbdf48ba46e6bc8897b2f53a78ed
+  gameObject: d6403aa5130e4171ada356753f431992
+  localEnabled: true
+  model: 48712e3d3ad4452788027686701e3cbc
+  materials:
+  - 9b0aca955a5a4351a1f5c4cd095ec9dd
+- !Rigidbody
+  instanceId: 18fa11527a1c4663819a62063eaf10f1
+  gameObject: d6403aa5130e4171ada356753f431992
+  localEnabled: true
+  mass: 1
+  inertiaTensor:
+    x: 1
+    y: 1
+    z: 1
+  linearDrag: 0.05
+  angularDrag: 0.05
+  isStatic: true
+- !CubeCollider
+  instanceId: 6ea3c5298faf49629f75a697cf6dd054
+  gameObject: d6403aa5130e4171ada356753f431992
+  localEnabled: true
+  massPart: 1
+  size:
+    x: 1
+    y: 1
+    z: 1
+- !GameObject
+  instanceId: 22f5ffd71a2a4e01be2affa4fe141077
+  name: Plane
+  localEnabled: true
+  transform: 3fd335719a0e4ca590c577253ae78b14
+  components:
+  - 3fd335719a0e4ca590c577253ae78b14
+  - 080295af16f54a038444acf8383c0481
+  - 0107cd1c42cc45e7a877e220a34e56e9
+  - 45b843858d864fd9b96fb7988e25f5dc
+- !Transform
+  instanceId: 3fd335719a0e4ca590c577253ae78b14
+  gameObject: 22f5ffd71a2a4e01be2affa4fe141077
+  Position:
+    y: 26.5
+    z: -5
+  Rotation:
+    w: 0.5000000000000001
+    x: 0.5000000000000001
+    y: 0.5000000000000001
+    z: -0.5000000000000001
+  Scale:
+    x: 20
+    y: 50
+    z: 3
+- !MeshComponent
+  instanceId: 080295af16f54a038444acf8383c0481
+  gameObject: 22f5ffd71a2a4e01be2affa4fe141077
+  localEnabled: true
+  model: 48712e3d3ad4452788027686701e3cbc
+  materials:
+  - 9b0aca955a5a4351a1f5c4cd095ec9dd
+- !Rigidbody
+  instanceId: 0107cd1c42cc45e7a877e220a34e56e9
+  gameObject: 22f5ffd71a2a4e01be2affa4fe141077
+  localEnabled: true
+  mass: 1
+  inertiaTensor:
+    x: 1
+    y: 1
+    z: 1
+  linearDrag: 0.05
+  angularDrag: 0.05
+  isStatic: true
+- !CubeCollider
+  instanceId: 45b843858d864fd9b96fb7988e25f5dc
+  gameObject: 22f5ffd71a2a4e01be2affa4fe141077
+  localEnabled: true
+  massPart: 1
+  size:
+    x: 1
+    y: 1
+    z: 1
+- !GameObject
+  instanceId: decc7767ba4e480ebb254089be623a3e
+  name: Plane
+  localEnabled: true
+  transform: cf7fe337c98a459ab65a6bfb0e6432a7
+  components:
+  - cf7fe337c98a459ab65a6bfb0e6432a7
+  - 511f4f1595f449d4a7eadb6cfc9049dd
+  - 05fb3220f5084ef8b2f1181c32d2d1c0
+  - b35f5119f5944ff29a4ab056618d55f3
+- !Transform
+  instanceId: cf7fe337c98a459ab65a6bfb0e6432a7
+  gameObject: decc7767ba4e480ebb254089be623a3e
+  Position:
+    y: -26.5
+    z: -5
+  Rotation:
+    w: 0.5000000000000001
+    x: 0.5000000000000001
+    y: 0.5000000000000001
+    z: -0.5000000000000001
+  Scale:
+    x: 20
+    y: 50
+    z: 3
+- !MeshComponent
+  instanceId: 511f4f1595f449d4a7eadb6cfc9049dd
+  gameObject: decc7767ba4e480ebb254089be623a3e
+  localEnabled: true
+  model: 48712e3d3ad4452788027686701e3cbc
+  materials:
+  - 9b0aca955a5a4351a1f5c4cd095ec9dd
+- !Rigidbody
+  instanceId: 05fb3220f5084ef8b2f1181c32d2d1c0
+  gameObject: decc7767ba4e480ebb254089be623a3e
+  localEnabled: true
+  mass: 1
+  inertiaTensor:
+    x: 1
+    y: 1
+    z: 1
+  linearDrag: 0.05
+  angularDrag: 0.05
+  isStatic: true
+- !CubeCollider
+  instanceId: b35f5119f5944ff29a4ab056618d55f3
+  gameObject: decc7767ba4e480ebb254089be623a3e
+  localEnabled: true
+  massPart: 1
+  size:
+    x: 1
+    y: 1
+    z: 1

@@ -16,10 +16,12 @@ namespace Shooter.Content.Scripts.Gameplay
 
         private List<Enemy> _enemies = new List<Enemy>();
 
+        public event Action OnEnemyDeathEvent;
         public void OnEnemyDeath(Enemy instance)
         {
             _enemies.Remove(instance);
             SpawnEnemyAtRandom();
+            OnEnemyDeathEvent?.Invoke();
         }
         
         private Vector3 GetSpawnPoint()
