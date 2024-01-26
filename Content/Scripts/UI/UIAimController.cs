@@ -116,7 +116,8 @@ namespace Shooter.Content.Scripts.UI
             var cameraPos = camera.GameObject.Transform.Position;
             var aimWorld = camera.ScreenToWorld(aimPoint) - cameraPos;
             var centerWorld = camera.ScreenToWorld(center) - cameraPos;
-            //Logger.Log(LogType.Info,$"From: ({aimWorld.x},{aimWorld.y},{aimWorld.z}), TO({centerWorld.x},{centerWorld.y},{centerWorld.z})");
+            var deltaVec = aimWorld - centerWorld;
+            Logger.Log(LogType.Info,$"From: ({deltaVec}), aim: {aimPoint - center}");
             var rotation = FromToRotation(centerWorld, aimWorld);
             return rotation;
         }
@@ -190,12 +191,12 @@ namespace Shooter.Content.Scripts.UI
             var setPos = currentPos;
             do
             {
-                var curPos = new Vector2f(AimX, AimY);
+                var curPos = setPos;
                 var targetPos = curPos + moveDirection * addMovement;
                 if (targetPos.magnitude() > radius)
                 {
                     var deltaRadius = targetPos.magnitude() - radius;
-                    targetPos = curPos + moveDirection * (addMovement - deltaRadius);
+                    setPos = curPos + moveDirection * (addMovement - deltaRadius);
                     addMovement = deltaRadius;
                     moveDirection = GetRandomDirection();
                     continue;
