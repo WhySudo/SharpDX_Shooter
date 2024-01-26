@@ -117,7 +117,7 @@ namespace Shooter.Content.Scripts.UI
             var aimWorld = camera.ScreenToWorld(aimPoint) - cameraPos;
             var centerWorld = camera.ScreenToWorld(center) - cameraPos;
             var deltaVec = aimWorld - centerWorld;
-            Logger.Log(LogType.Info,$"From: ({deltaVec}), aim: {aimPoint - center}");
+            //Logger.Log(LogType.Info,$"From: ({deltaVec}), aim: {aimPoint - center}");
             var rotation = FromToRotation(centerWorld, aimWorld);
             return rotation;
         }

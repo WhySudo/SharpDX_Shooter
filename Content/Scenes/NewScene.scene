@@ -139,8 +139,8 @@ SerializableObjects:
   instanceId: ea2e28fcee9942bab8b0477f1e00070e
   gameObject: 981e0c6e988c41e0b92317229cb8823d
   localEnabled: true
-  moveSpeed: 100
-  radius: 30
+  moveSpeed: 1800
+  radius: 100
   vectorModifier: 10
   aproxDelta: 0.01
 - !GameObject

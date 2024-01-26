@@ -71,7 +71,7 @@ namespace Shooter.Content.Scripts.Gameplay
             var upVelocity = _rigidbody.Velocity.z;
             if (upVelocity <= detectUpSpeed && jump)
             {
-                //_rigidbody.AddImpulse(Vector3.Up * jumpImpulse); 
+                _rigidbody.AddImpulse(Vector3.Up * jumpImpulse); 
             }
             //movementBody.AddForce(impulseVector);
         }

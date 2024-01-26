@@ -97,11 +97,11 @@ namespace Shooter.Content.Scripts.Gameplay.Weapon
             //var shootDirection = aimPoint * _shootPoint.Transform.Up;
             var shootDirection = aimPoint*direction.normalized();
             
-            Logger.Log(LogType.Info, $"shootdir : {realForward}");
+            //Logger.Log(LogType.Info, $"shootdir : {realForward}");
             //var shootRay = new Ray(_shootPoint.Transform.Position, shootDirection);
             if (Raycast.HitMesh(camRay, out var camResult))
             {
-                Logger.Log(LogType.Info,camResult.HitObject.Name);
+                //Logger.Log(LogType.Info,camResult.HitObject.Name);
                 var enemyHit = camResult.HitObject.GetComponent<Enemy>();
                 if (enemyHit != null)
                 {
@@ -113,7 +113,7 @@ namespace Shooter.Content.Scripts.Gameplay.Weapon
                 if (selfHit != null)
                 {
                     var dist = cam.GameObject.Transform.Position - camResult.HitPoint;
-                    Logger.Log(LogType.Info, $"Self shoot Distance: {dist.magnitude()}!");
+                    //Logger.Log(LogType.Info, $"Self shoot Distance: {dist.magnitude()}!");
                 }
             }
         }
