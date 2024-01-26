@@ -11,7 +11,8 @@ namespace Shooter.Content.Scripts.Gameplay
     public class EnemySpawner: BehaviourComponent
     {
         [SerializedField] private Prefab enemyPrefab;
-        [SerializedField] private int enemysCount;
+        [SerializedField] private float spawnRadius;
+        [SerializedField] private float spawnHeight;
 
         private List<Enemy> _enemies = new List<Enemy>();
 
@@ -23,15 +24,22 @@ namespace Shooter.Content.Scripts.Gameplay
         
         private Vector3 GetSpawnPoint()
         {
-            var spawnPoints = GameObject.Transform.Children;
-            var count = spawnPoints.Count;
-            var spawnIndex = Random.Shared.Next(0, count);
-            return spawnPoints[spawnIndex].Position;
+            var setSpawnRadius = Random.Shared.NextDouble() * spawnRadius;
+            var x = Random.Shared.NextDouble();
+            var y = Math.Sqrt(1 - (x * x));
+            x *= setSpawnRadius;
+            y *= setSpawnRadius;
+            var dirRandom = Random.Shared.Next(0, 4);
+            var xDirection = dirRandom % 2 == 1 ? -1f : 1f;
+            var yDirection = dirRandom / 2 == 1 ? -1f : 1f;
+            var result = new Vector3(xDirection * x, yDirection * y, spawnHeight);
+            return result;
         }
 
         private void SpawnEnemyAtRandom()
         {
             var point = GetSpawnPoint();
+            Logger.Log(LogType.Info, $"NextSpawn at: {point}");
             SpawnEnemy(point);
         }
         private void SpawnEnemy(Vector3 point)
@@ -52,12 +60,10 @@ namespace Shooter.Content.Scripts.Gameplay
         private void Init()
         {
             var spawnPoints = GameObject.Transform.Children.ToList();
-            for (int i = 0; i < enemysCount; i++)
+            for (int i = 0; i < spawnPoints.Count; i++)
             {
-                var point = Random.Shared.Next(0, spawnPoints.Count);
-                var spawnPoint = spawnPoints[point];
+                var spawnPoint = spawnPoints[i];
                 SpawnEnemy(spawnPoint.Position);
-                spawnPoints.Remove(spawnPoint);
             }
         }
     }

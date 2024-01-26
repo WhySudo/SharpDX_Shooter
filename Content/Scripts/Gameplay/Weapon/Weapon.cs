@@ -35,11 +35,25 @@ namespace Shooter.Content.Scripts.Gameplay.Weapon
         private void CheckForShootInput()
         {
             var shootPressed = Input.IsMouseButtonDown(MouseButton.Left) || Input.IsKeyDown(Key.LeftCtrl);
+            if (shootPressed)
+            {
+                Input.CursorState = CursorState.HiddenAndLocked;
+            }
             if (shootPressed && _canShoot)
             {
                 Shoot();
             }
+            if (Input.IsKeyDown(Key.Escape))
+            {
+                Input.CursorState = CursorState.Default;
+            }
         }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();Input.CursorState = CursorState.Default;
+        }
+
         public void Shoot()
         {
             ProcessShoot();

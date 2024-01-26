@@ -18,8 +18,8 @@ SerializableObjects:
   Rotation:
     w: 1
   Scale:
-    x: 200
-    y: 200
+    x: 100
+    y: 100
     z: 3
 - !MeshComponent
   instanceId: fa427cae6d2c419995ebedc03e1ba2a2
@@ -326,7 +326,8 @@ SerializableObjects:
   gameObject: fb8be38ab9674dd393291001c7dc3494
   localEnabled: true
   enemyPrefab: 1632f71497ab4b9b81b8552ebd9b1def
-  enemysCount: 5
+  spawnRadius: 50
+  spawnHeight: 40
 - !GameObject
   instanceId: b212bdcb00f14868816b607f8e85a070
   name: SpawnPoint
@@ -491,3 +492,24 @@ SerializableObjects:
     x: 1
     y: 1
     z: 1
+- !GameObject
+  instanceId: 9c14fbc8fd5648d0b319382cb0328c0c
+  name: KillsCounter
+  localEnabled: true
+  transform: 4d6f6c592d45485da914c983bf15aa6b
+  components:
+  - 4d6f6c592d45485da914c983bf15aa6b
+  - 194b85f2364f40bd91d0b50abb2b2d7c
+- !Transform
+  instanceId: 4d6f6c592d45485da914c983bf15aa6b
+  gameObject: 9c14fbc8fd5648d0b319382cb0328c0c
+  Rotation:
+    w: 1
+  Scale:
+    x: 1
+    y: 1
+    z: 1
+- !KillsCounter
+  instanceId: 194b85f2364f40bd91d0b50abb2b2d7c
+  gameObject: 9c14fbc8fd5648d0b319382cb0328c0c
+  localEnabled: true
