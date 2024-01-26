@@ -13,6 +13,7 @@ namespace Shooter.Content.Scripts.Gameplay.Weapon
         [SerializedField] private int damage;
         [SerializedField] private GameObject UiController;
         [SerializedField] private GameObject _shootPoint;
+        [SerializedField] private GameObject playerAvatar;
         public event Action OnWeaponShoot;
 
         private UIAimController _aim;
@@ -77,9 +78,9 @@ namespace Shooter.Content.Scripts.Gameplay.Weapon
         {
             var cam = Camera.Current;
             //var aimPoint = Quaternion.Identity;
-            var aimPoint = _aim.GetWeaponModifier();
+            var aimPoint = _aim.GetWeaponModifier().inverse();
             //
-            var shootDirection = aimPoint * GameObject.Transform.Up;
+            var shootDirection = aimPoint * _shootPoint.Transform.Forward;
             var shootRay = new Ray(_shootPoint.Transform.Position, shootDirection);
             if (Raycast.HitMesh(shootRay, out var result))
             {

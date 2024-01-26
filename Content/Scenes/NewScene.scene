@@ -160,6 +160,7 @@ SerializableObjects:
   - 26b0b3c46ce84e4192b7dc57d5be2660
   - 68f923c84fe84f5198c58b700175e935
   - cc7361152f3b47fb8f58e1bc1c6c3e6c
+  - f6f82365e7cb4c0c83e40bcef9287254
   Position:
     z: 1
   Rotation:
@@ -209,6 +210,7 @@ SerializableObjects:
   - 3c5a0cce6d7d423da6e134a2d5daac86
   - a64ffe8b18464bfc9f79a569fd519c95
   - b32bb50de4be4cebb993333ead651c09
+  - 7c64af874e70475e950989689460e178
 - !Transform
   instanceId: 68f923c84fe84f5198c58b700175e935
   gameObject: 74836d04cb5147daa06722c8b0232109
@@ -242,7 +244,8 @@ SerializableObjects:
   reloadRate: 0.1
   damage: 10
   UiController: 981e0c6e988c41e0b92317229cb8823d
-  _shootPoint: a1f86aa9e6d44d51bbd94ec3191ea9c7
+  _shootPoint: cc02e4964ea64803b552b302ab006ba7
+  playerAvatar: 61daac5fddf54ef0898826b3dbca2615
 - !WeaponSounds
   instanceId: a64ffe8b18464bfc9f79a569fd519c95
   gameObject: 74836d04cb5147daa06722c8b0232109
@@ -253,6 +256,11 @@ SerializableObjects:
   gameObject: 74836d04cb5147daa06722c8b0232109
   localEnabled: true
   volume: 1
+- !WeaponLight
+  instanceId: 7c64af874e70475e950989689460e178
+  gameObject: 74836d04cb5147daa06722c8b0232109
+  localEnabled: true
+  targetLight: b856734ee44f42f8822e1c9ecd43a90e
 - !GameObject
   instanceId: d940274480e64050a4c1b2fc3fb428f9
   name: PlayerView
@@ -285,11 +293,12 @@ SerializableObjects:
   transform: 06129bc073f54593930be2e7e72a28eb
   components:
   - 06129bc073f54593930be2e7e72a28eb
-  - 2b1c98d0aa4145dfa41b90bea2f3d183
 - !Transform
   instanceId: 06129bc073f54593930be2e7e72a28eb
   gameObject: a1f86aa9e6d44d51bbd94ec3191ea9c7
   parent: 68f923c84fe84f5198c58b700175e935
+  children:
+  - 0a80c5b55d954de6a921d6d5ab87de93
   Position:
     y: 0.5
     z: 5
@@ -299,15 +308,6 @@ SerializableObjects:
     x: 1
     y: 1
     z: 1
-- !PointLight
-  instanceId: 2b1c98d0aa4145dfa41b90bea2f3d183
-  gameObject: a1f86aa9e6d44d51bbd94ec3191ea9c7
-  localEnabled: true
-  brightness: 10
-  Color:
-    x: 1
-  radius: 4
-  intensity: 0.4
 - !GameObject
   instanceId: fb8be38ab9674dd393291001c7dc3494
   name: Spawner
@@ -736,3 +736,58 @@ SerializableObjects:
     x: 1
     y: 1
     z: 1
+- !GameObject
+  instanceId: b856734ee44f42f8822e1c9ecd43a90e
+  name: Light
+  localEnabled: true
+  transform: 0a80c5b55d954de6a921d6d5ab87de93
+  components:
+  - 0a80c5b55d954de6a921d6d5ab87de93
+  - b6f91231598b4d118b6ce0600c51b2b8
+- !Transform
+  instanceId: 0a80c5b55d954de6a921d6d5ab87de93
+  gameObject: b856734ee44f42f8822e1c9ecd43a90e
+  parent: 06129bc073f54593930be2e7e72a28eb
+  Rotation:
+    w: 1
+  Scale:
+    x: 1
+    y: 1
+    z: 1
+- !PointLight
+  instanceId: b6f91231598b4d118b6ce0600c51b2b8
+  gameObject: b856734ee44f42f8822e1c9ecd43a90e
+  localEnabled: true
+  brightness: 10
+  Color:
+    x: 1
+  radius: 4
+  intensity: 0.7
+- !GameObject
+  instanceId: cc02e4964ea64803b552b302ab006ba7
+  name: ShootPoint
+  localEnabled: true
+  transform: f6f82365e7cb4c0c83e40bcef9287254
+  components:
+  - f6f82365e7cb4c0c83e40bcef9287254
+  - 96b2950ea55e4da492d6e796e59ee3c6
+- !Transform
+  instanceId: f6f82365e7cb4c0c83e40bcef9287254
+  gameObject: cc02e4964ea64803b552b302ab006ba7
+  parent: 558116e3d908424aafb414bbccf025ef
+  Position:
+    y: 0.5
+    z: 0.5
+  Rotation:
+    w: 1
+  Scale:
+    x: 0.1
+    y: 0.1
+    z: 0.1
+- !MeshComponent
+  instanceId: 96b2950ea55e4da492d6e796e59ee3c6
+  gameObject: cc02e4964ea64803b552b302ab006ba7
+  localEnabled: true
+  model: 48712e3d3ad4452788027686701e3cbc
+  materials:
+  - 21d0d027ce40447e9af748932039a556
