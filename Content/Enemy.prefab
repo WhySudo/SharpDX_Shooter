@@ -1,0 +1,58 @@
+﻿!PrefabData
+SerializableObjects:
+- !GameObject
+  instanceId: 1065a1d777a24bd39aec470876838547
+  name: Enemy
+  localEnabled: true
+  transform: df6d4f1f43cc4bd790e47a3f16fe5786
+  components:
+  - df6d4f1f43cc4bd790e47a3f16fe5786
+  - 029e9c8c00974926996972a84dba20dd
+  - 23e7387f0805477caf87e9c47f9cb396
+  - 34e95a23baf640f2a537ba0be94f987c
+  - fc7a2e9c9cc4400b9d511ac51c942d15
+- !Transform
+  instanceId: df6d4f1f43cc4bd790e47a3f16fe5786
+  gameObject: 1065a1d777a24bd39aec470876838547
+  Position:
+    x: 20
+    z: 2
+  Rotation:
+    w: 1
+  Scale:
+    x: 1
+    y: 1
+    z: 1
+- !Enemy
+  instanceId: 029e9c8c00974926996972a84dba20dd
+  gameObject: 1065a1d777a24bd39aec470876838547
+  localEnabled: true
+  MaxHealth: 100
+- !Rigidbody
+  instanceId: 23e7387f0805477caf87e9c47f9cb396
+  gameObject: 1065a1d777a24bd39aec470876838547
+  localEnabled: true
+  mass: 1
+  inertiaTensor:
+    x: 1
+    y: 1
+    z: 1
+  linearDrag: 0.05
+  angularDrag: 0.05
+- !MeshComponent
+  instanceId: 34e95a23baf640f2a537ba0be94f987c
+  gameObject: 1065a1d777a24bd39aec470876838547
+  localEnabled: true
+  model: 48712e3d3ad4452788027686701e3cbc
+  materials:
+  - 21d0d027ce40447e9af748932039a556
+- !CubeCollider
+  instanceId: fc7a2e9c9cc4400b9d511ac51c942d15
+  gameObject: 1065a1d777a24bd39aec470876838547
+  localEnabled: true
+  massPart: 1
+  size:
+    x: 1
+    y: 1
+    z: 1
+rootTransformIndex: 1

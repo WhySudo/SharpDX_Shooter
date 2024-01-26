@@ -9,6 +9,7 @@ namespace Shooter.Content.Scripts.Gameplay.Weapon
     public class Weapon : BehaviourComponent
     {
         [SerializedField] private float reloadRate;
+        [SerializedField] private int damage;
         [SerializedField] private GameObject UiController;
         [SerializedField] private GameObject _shootPoint;
         public event Action OnWeaponShoot;
@@ -67,6 +68,7 @@ namespace Shooter.Content.Scripts.Gameplay.Weapon
                 var enemyHit = result.HitObject.GetComponent<Enemy>();
                 if (enemyHit != null)
                 {
+                    enemyHit.TakeDamage(damage);
                     Logger.Log(LogType.Info, "Enemy shoot!");
                 }
             }

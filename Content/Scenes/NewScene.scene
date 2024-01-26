@@ -138,8 +138,8 @@ SerializableObjects:
   instanceId: ea2e28fcee9942bab8b0477f1e00070e
   gameObject: 981e0c6e988c41e0b92317229cb8823d
   localEnabled: true
-  moveSpeed: 10
-  radius: 10
+  moveSpeed: 200
+  radius: 100
   vectorModifier: 30
   aproxDelta: 0.01
 - !GameObject
@@ -236,6 +236,7 @@ SerializableObjects:
   gameObject: 74836d04cb5147daa06722c8b0232109
   localEnabled: true
   reloadRate: 0.1
+  damage: 10
   UiController: 981e0c6e988c41e0b92317229cb8823d
   _shootPoint: a1f86aa9e6d44d51bbd94ec3191ea9c7
 - !WeaponSounds
@@ -293,56 +294,198 @@ SerializableObjects:
     y: 1
     z: 1
 - !GameObject
-  instanceId: 1531e4950e234c7dbd789dc627b5568b
-  name: Enemy
+  instanceId: fb8be38ab9674dd393291001c7dc3494
+  name: Spawner
   localEnabled: true
-  transform: a1607cd89c384573986cfd4c3a1a2a38
+  transform: 139cc2c44f2d47ddba5ad5a36fd5d34f
   components:
-  - a1607cd89c384573986cfd4c3a1a2a38
-  - 0cc7a0f48eb04d8d835b28a1a14ee91f
-  - 67824588392846a3a95060d041690e28
-  - 86a67868142347869a059ddbf2594683
-  - 63333e03349d48bcbdf475f704807d58
+  - 139cc2c44f2d47ddba5ad5a36fd5d34f
+  - 265166676b57435fb3e843602004a0f4
 - !Transform
-  instanceId: a1607cd89c384573986cfd4c3a1a2a38
-  gameObject: 1531e4950e234c7dbd789dc627b5568b
-  Position:
-    x: 20
-    z: 2
+  instanceId: 139cc2c44f2d47ddba5ad5a36fd5d34f
+  gameObject: fb8be38ab9674dd393291001c7dc3494
+  children:
+  - 849bf44f08434c7087c7621a4a2c3a8b
+  - 4e04202b3edb4bd8b74c153ef92f4b86
+  - ee280a1d092b4fae9f249240e169a611
+  - b3587a2a720f4982aa700f006ce9801b
+  - afd2fd4fa79e40fc9d3c478fdb892829
+  - e6cd518bc8c34d8abc5ac69e1f0336d4
+  - 76ffa75a8be741e39f7c6566cd25b056
+  - 8e9f11a87a4341069297adc3c91a3bf7
   Rotation:
     w: 1
   Scale:
     x: 1
     y: 1
     z: 1
-- !Enemy
-  instanceId: 0cc7a0f48eb04d8d835b28a1a14ee91f
-  gameObject: 1531e4950e234c7dbd789dc627b5568b
+- !EnemySpawner
+  instanceId: 265166676b57435fb3e843602004a0f4
+  gameObject: fb8be38ab9674dd393291001c7dc3494
   localEnabled: true
-- !Rigidbody
-  instanceId: 67824588392846a3a95060d041690e28
-  gameObject: 1531e4950e234c7dbd789dc627b5568b
+  enemyPrefab: ec6b160cc65c423f9ab8d5c33a4e7252
+  enemysCount: 5
+- !GameObject
+  instanceId: b212bdcb00f14868816b607f8e85a070
+  name: SpawnPoint
   localEnabled: true
-  mass: 1
-  inertiaTensor:
+  transform: 849bf44f08434c7087c7621a4a2c3a8b
+  components:
+  - 849bf44f08434c7087c7621a4a2c3a8b
+- !Transform
+  instanceId: 849bf44f08434c7087c7621a4a2c3a8b
+  gameObject: b212bdcb00f14868816b607f8e85a070
+  parent: 139cc2c44f2d47ddba5ad5a36fd5d34f
+  Position:
+    x: -20
+    y: -20
+    z: 30
+  Rotation:
+    w: 1
+  Scale:
     x: 1
     y: 1
     z: 1
-  linearDrag: 0.05
-  angularDrag: 0.05
-- !MeshComponent
-  instanceId: 86a67868142347869a059ddbf2594683
-  gameObject: 1531e4950e234c7dbd789dc627b5568b
+- !GameObject
+  instanceId: 76519da3d71a4551b0b846455133c55f
+  name: SpawnPoint
   localEnabled: true
-  model: 48712e3d3ad4452788027686701e3cbc
-  materials:
-  - 21d0d027ce40447e9af748932039a556
-- !CubeCollider
-  instanceId: 63333e03349d48bcbdf475f704807d58
-  gameObject: 1531e4950e234c7dbd789dc627b5568b
+  transform: 4e04202b3edb4bd8b74c153ef92f4b86
+  components:
+  - 4e04202b3edb4bd8b74c153ef92f4b86
+- !Transform
+  instanceId: 4e04202b3edb4bd8b74c153ef92f4b86
+  gameObject: 76519da3d71a4551b0b846455133c55f
+  parent: 139cc2c44f2d47ddba5ad5a36fd5d34f
+  Position:
+    x: 20
+    y: -20
+    z: 30
+  Rotation:
+    w: 1
+  Scale:
+    x: 1
+    y: 1
+    z: 1
+- !GameObject
+  instanceId: 05fab86ddff84edf913ee88dc35c1e70
+  name: SpawnPoint
   localEnabled: true
-  massPart: 1
-  size:
+  transform: ee280a1d092b4fae9f249240e169a611
+  components:
+  - ee280a1d092b4fae9f249240e169a611
+- !Transform
+  instanceId: ee280a1d092b4fae9f249240e169a611
+  gameObject: 05fab86ddff84edf913ee88dc35c1e70
+  parent: 139cc2c44f2d47ddba5ad5a36fd5d34f
+  Position:
+    x: 20
+    y: 20
+    z: 30
+  Rotation:
+    w: 1
+  Scale:
+    x: 1
+    y: 1
+    z: 1
+- !GameObject
+  instanceId: 0b21f7257cc34794894320acdebbc2fc
+  name: SpawnPoint
+  localEnabled: true
+  transform: b3587a2a720f4982aa700f006ce9801b
+  components:
+  - b3587a2a720f4982aa700f006ce9801b
+- !Transform
+  instanceId: b3587a2a720f4982aa700f006ce9801b
+  gameObject: 0b21f7257cc34794894320acdebbc2fc
+  parent: 139cc2c44f2d47ddba5ad5a36fd5d34f
+  Position:
+    x: -20
+    y: 20
+    z: 30
+  Rotation:
+    w: 1
+  Scale:
+    x: 1
+    y: 1
+    z: 1
+- !GameObject
+  instanceId: fe1ae507cc1841db8991acf108031f9b
+  name: SpawnPoint
+  localEnabled: true
+  transform: afd2fd4fa79e40fc9d3c478fdb892829
+  components:
+  - afd2fd4fa79e40fc9d3c478fdb892829
+- !Transform
+  instanceId: afd2fd4fa79e40fc9d3c478fdb892829
+  gameObject: fe1ae507cc1841db8991acf108031f9b
+  parent: 139cc2c44f2d47ddba5ad5a36fd5d34f
+  Position:
+    x: 20
+    z: 30
+  Rotation:
+    w: 1
+  Scale:
+    x: 1
+    y: 1
+    z: 1
+- !GameObject
+  instanceId: 694f58de253e42f1962274197e7b49c8
+  name: SpawnPoint
+  localEnabled: true
+  transform: e6cd518bc8c34d8abc5ac69e1f0336d4
+  components:
+  - e6cd518bc8c34d8abc5ac69e1f0336d4
+- !Transform
+  instanceId: e6cd518bc8c34d8abc5ac69e1f0336d4
+  gameObject: 694f58de253e42f1962274197e7b49c8
+  parent: 139cc2c44f2d47ddba5ad5a36fd5d34f
+  Position:
+    x: -20
+    z: 30
+  Rotation:
+    w: 1
+  Scale:
+    x: 1
+    y: 1
+    z: 1
+- !GameObject
+  instanceId: d6ebe6e61ce240529d2f5f466b240c78
+  name: SpawnPoint
+  localEnabled: true
+  transform: 76ffa75a8be741e39f7c6566cd25b056
+  components:
+  - 76ffa75a8be741e39f7c6566cd25b056
+- !Transform
+  instanceId: 76ffa75a8be741e39f7c6566cd25b056
+  gameObject: d6ebe6e61ce240529d2f5f466b240c78
+  parent: 139cc2c44f2d47ddba5ad5a36fd5d34f
+  Position:
+    y: 20
+    z: 30
+  Rotation:
+    w: 1
+  Scale:
+    x: 1
+    y: 1
+    z: 1
+- !GameObject
+  instanceId: 5e3457ee8d5745df814965e6c62140c9
+  name: SpawnPoint
+  localEnabled: true
+  transform: 8e9f11a87a4341069297adc3c91a3bf7
+  components:
+  - 8e9f11a87a4341069297adc3c91a3bf7
+- !Transform
+  instanceId: 8e9f11a87a4341069297adc3c91a3bf7
+  gameObject: 5e3457ee8d5745df814965e6c62140c9
+  parent: 139cc2c44f2d47ddba5ad5a36fd5d34f
+  Position:
+    y: -20
+    z: 30
+  Rotation:
+    w: 1
+  Scale:
     x: 1
     y: 1
     z: 1
