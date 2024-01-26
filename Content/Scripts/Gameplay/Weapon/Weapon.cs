@@ -2,23 +2,25 @@
 using System.Windows.Input;
 using Engine;
 using Engine.BaseAssets.Components;
+using Shooter.Content.Scripts.UI;
 
 namespace Shooter.Content.Scripts.Gameplay.Weapon
 {
     public class Weapon : BehaviourComponent
     {
         [SerializedField] private float reloadRate;
-
+        [SerializedField] private GameObject UiController;
+        [SerializedField] private GameObject _shootPoint;
         public event Action OnWeaponShoot;
 
-        private GameObject _shootPoint;
+        private UIAimController _aim;
 
         private bool _canShoot = true;
         private float _shootTimer = 0f;
         public override void Start()
         {
             base.Start();
-            _shootPoint = GameObject.Transform.Children[0].GameObject;
+            _aim = UiController.GetComponent<UIAimController>();
         }
 
         public override void Update()
@@ -57,7 +59,8 @@ namespace Shooter.Content.Scripts.Gameplay.Weapon
 
         private void ProcessShoot()
         {
-            var shootDirection = GameObject.Transform.Up;
+            var aimPoint = _aim.GetWeaponModifier();
+            var shootDirection = aimPoint * GameObject.Transform.Up;
             var shootRay = new Ray(_shootPoint.Transform.Position, shootDirection);
             if (Raycast.HitMesh(shootRay, out var result))
             {

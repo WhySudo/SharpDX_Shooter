@@ -13,7 +13,7 @@
                    " />
         <Border Width="400" Height="400">
             <Border Width="50" Height="50">
-            <e:AssetImage SourcePath="UI_Shooter\focus.png"  >
+            <e:AssetImage SourcePath="UI_Shooter\focus.png"  x:Name="DrawAim">
                 
                 <Image.RenderTransform>
                     <TranslateTransform X="{Binding AimX}" Y="{Binding AimY}"/>

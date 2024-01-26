@@ -138,9 +138,10 @@ SerializableObjects:
   instanceId: ea2e28fcee9942bab8b0477f1e00070e
   gameObject: 981e0c6e988c41e0b92317229cb8823d
   localEnabled: true
-  moveSpeed: 150
-  radius: 30
+  moveSpeed: 10
+  radius: 10
   vectorModifier: 30
+  aproxDelta: 0.01
 - !GameObject
   instanceId: 61daac5fddf54ef0898826b3dbca2615
   name: Player
@@ -211,7 +212,7 @@ SerializableObjects:
   children:
   - 06129bc073f54593930be2e7e72a28eb
   Position:
-    x: 0.5
+    x: 0.2
     y: 0.3
   Rotation:
     w: 4.329780281177467E-17
@@ -235,6 +236,8 @@ SerializableObjects:
   gameObject: 74836d04cb5147daa06722c8b0232109
   localEnabled: true
   reloadRate: 0.1
+  UiController: 981e0c6e988c41e0b92317229cb8823d
+  _shootPoint: a1f86aa9e6d44d51bbd94ec3191ea9c7
 - !WeaponSounds
   instanceId: a64ffe8b18464bfc9f79a569fd519c95
   gameObject: 74836d04cb5147daa06722c8b0232109

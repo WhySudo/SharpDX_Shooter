@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 using Engine;
 using Engine.BaseAssets.Components;
@@ -19,12 +20,16 @@ namespace Shooter.Content.Scripts.UI
         [SerializedField] private float moveSpeed;
         [SerializedField] private float radius;
         [SerializedField] private float vectorModifier;
+        [SerializedField] private float aproxDelta;
         private WPF_Form _drawnWpfForm;
 
         private string drawText = "";
 
         private float aimX = 0f;
         private float aimY = 0f;
+
+        private float width;
+        private float height;
 
         private Vector2f currentPoint = new Vector2f();
         private Vector2f moveDirection = new Vector2f();
@@ -57,11 +62,62 @@ namespace Shooter.Content.Scripts.UI
             }
         }
 
+        public Vector2 GetAimPixelPoint()
+        {
+            var pixelY = aimY + (height/2);
+            var pixelX = aimX + (width/2);
+            return new Vector2(pixelX,pixelY);
+        }
+
+        private Vector2 GetMainScreenPoint()
+        {
+            return new Vector2((width/2),(height/2));
+        }
+
+        private void UpdateScreenSize()
+        {
+            GraphicsCore.ViewportPanel.Dispatcher.Invoke(() =>
+            {
+                width = (float)(GraphicsCore.ViewportPanel.ActualWidth / 2);
+                height = (float)(GraphicsCore.ViewportPanel.ActualHeight / 2);
+                //Logger.Log(LogType.Info,$"ScreenSize: {GraphicsCore.ViewportPanel.ActualWidth}, {GraphicsCore.ViewportPanel.ActualHeight}");
+            });
+        }
         public Quaternion GetWeaponModifier()
         {
-            return Quaternion.Identity;
+            UpdateScreenSize();
+            var aimPoint = GetAimPixelPoint();
+            var center = GetMainScreenPoint();
+            var camera = Camera.Current;
+            var cameraPos = camera.GameObject.Transform.Position;
+            var aimWorld = camera.ScreenToWorld(aimPoint) - cameraPos;
+            var centerWorld = camera.ScreenToWorld(center) - cameraPos;
+            //Logger.Log(LogType.Info,$"From: ({aimWorld.x},{aimWorld.y},{aimWorld.z}), TO({centerWorld.x},{centerWorld.y},{centerWorld.z})");
+            var rotation = FromToRotation(centerWorld, aimWorld);
+            return rotation;
         }
-        
+        private Quaternion FromToRotation(Vector3 aFrom, Vector3 aTo)
+        {
+            aFrom.normalize();
+            aTo.normalize();
+            var cross = aFrom.cross(aTo);
+            var dotProduct = aFrom.dot(aTo);
+            var angle =  Math.Acos(dotProduct);
+            //Logger.Log(LogType.Info,$"Angle: ({angle}); Cross: {cross.x}, {cross.y}, {cross.z}");
+            if (Math.Abs(dotProduct - 1f) <= aproxDelta)
+            {
+                return Quaternion.Identity;
+            }
+            // else if (Math.Abs(dotProduct + 1f) <= aproxDelta) // If they are nearly antiparallel, create a 180-degree rotation
+            // {
+            //     Vector3 axis = Vector3.Cross(Vector3.forward, from);
+            //     if (axis == Vector3.zero) axis = Vector3.Cross(Vector3.up, from); // Handle special case when from vector is parallel to up vector
+            //     axis.Normalize();
+            //     return Quaternion.AngleAxis(180.0f, axis);
+            // }
+            return Quaternion.FromAxisAngle( cross.normalized(), angle);
+            //aFrom.
+        }
         public override void Start()
         {
             
@@ -72,6 +128,8 @@ namespace Shooter.Content.Scripts.UI
                 _drawnWpfForm = new WPF_Form();
                 GraphicsCore.ViewportPanel.Children.Add(_drawnWpfForm);
                 _drawnWpfForm.DataContext = this;
+                width = (float)_drawnWpfForm.Width;
+                height = (float)_drawnWpfForm.Height;
             });
             DrawText = "Merhaba";
         }
