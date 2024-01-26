@@ -61,6 +61,11 @@ namespace Shooter.Content.Scripts.Gameplay.Weapon
             var shootRay = new Ray(_shootPoint.Transform.Position, shootDirection);
             if (Raycast.HitMesh(shootRay, out var result))
             {
+                var enemyHit = result.HitObject.GetComponent<Enemy>();
+                if (enemyHit != null)
+                {
+                    Logger.Log(LogType.Info, "Enemy shoot!");
+                }
             }
         }
     }

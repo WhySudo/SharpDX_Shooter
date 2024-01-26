@@ -86,6 +86,7 @@ SerializableObjects:
   - 26b0b3c46ce84e4192b7dc57d5be2660
   - 0b52fcee7e5042dba7d6493db17b74af
   - 5ba3a410bb4541be9a1cb8f544c3784b
+  - 7528e75080d642bf8774c9e82a466570
 - !Transform
   instanceId: 26b0b3c46ce84e4192b7dc57d5be2660
   gameObject: a304daf8286e486fa0b3d3deb7704e6b
@@ -112,6 +113,10 @@ SerializableObjects:
   gameObject: a304daf8286e486fa0b3d3deb7704e6b
   localEnabled: true
   rotationValue: 0.005
+- !SoundListener
+  instanceId: 7528e75080d642bf8774c9e82a466570
+  gameObject: a304daf8286e486fa0b3d3deb7704e6b
+  localEnabled: true
 - !GameObject
   instanceId: 981e0c6e988c41e0b92317229cb8823d
   name: UI
@@ -134,7 +139,7 @@ SerializableObjects:
   gameObject: 981e0c6e988c41e0b92317229cb8823d
   localEnabled: true
   moveSpeed: 150
-  radius: 100
+  radius: 30
   vectorModifier: 30
 - !GameObject
   instanceId: 61daac5fddf54ef0898826b3dbca2615
@@ -197,6 +202,8 @@ SerializableObjects:
   - 68f923c84fe84f5198c58b700175e935
   - 1bd6afdfede3456c98dd7edc85faa2da
   - 3c5a0cce6d7d423da6e134a2d5daac86
+  - a64ffe8b18464bfc9f79a569fd519c95
+  - b32bb50de4be4cebb993333ead651c09
 - !Transform
   instanceId: 68f923c84fe84f5198c58b700175e935
   gameObject: 74836d04cb5147daa06722c8b0232109
@@ -228,6 +235,15 @@ SerializableObjects:
   gameObject: 74836d04cb5147daa06722c8b0232109
   localEnabled: true
   reloadRate: 0.1
+- !WeaponSounds
+  instanceId: a64ffe8b18464bfc9f79a569fd519c95
+  gameObject: 74836d04cb5147daa06722c8b0232109
+  localEnabled: true
+  shootSound: bd25002477774923a1bcab989b0ccdb1
+- !SoundSource
+  instanceId: b32bb50de4be4cebb993333ead651c09
+  gameObject: 74836d04cb5147daa06722c8b0232109
+  localEnabled: true
 - !GameObject
   instanceId: d940274480e64050a4c1b2fc3fb428f9
   name: PlayerView
@@ -270,6 +286,60 @@ SerializableObjects:
   Rotation:
     w: 1
   Scale:
+    x: 1
+    y: 1
+    z: 1
+- !GameObject
+  instanceId: 1531e4950e234c7dbd789dc627b5568b
+  name: Enemy
+  localEnabled: true
+  transform: a1607cd89c384573986cfd4c3a1a2a38
+  components:
+  - a1607cd89c384573986cfd4c3a1a2a38
+  - 0cc7a0f48eb04d8d835b28a1a14ee91f
+  - 67824588392846a3a95060d041690e28
+  - 86a67868142347869a059ddbf2594683
+  - 63333e03349d48bcbdf475f704807d58
+- !Transform
+  instanceId: a1607cd89c384573986cfd4c3a1a2a38
+  gameObject: 1531e4950e234c7dbd789dc627b5568b
+  Position:
+    x: 20
+    z: 2
+  Rotation:
+    w: 1
+  Scale:
+    x: 1
+    y: 1
+    z: 1
+- !Enemy
+  instanceId: 0cc7a0f48eb04d8d835b28a1a14ee91f
+  gameObject: 1531e4950e234c7dbd789dc627b5568b
+  localEnabled: true
+- !Rigidbody
+  instanceId: 67824588392846a3a95060d041690e28
+  gameObject: 1531e4950e234c7dbd789dc627b5568b
+  localEnabled: true
+  mass: 1
+  inertiaTensor:
+    x: 1
+    y: 1
+    z: 1
+  linearDrag: 0.05
+  angularDrag: 0.05
+- !MeshComponent
+  instanceId: 86a67868142347869a059ddbf2594683
+  gameObject: 1531e4950e234c7dbd789dc627b5568b
+  localEnabled: true
+  model: 48712e3d3ad4452788027686701e3cbc
+  materials:
+  - 21d0d027ce40447e9af748932039a556
+- !CubeCollider
+  instanceId: 63333e03349d48bcbdf475f704807d58
+  gameObject: 1531e4950e234c7dbd789dc627b5568b
+  localEnabled: true
+  massPart: 1
+  size:
     x: 1
     y: 1
     z: 1
