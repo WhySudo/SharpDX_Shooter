@@ -175,6 +175,8 @@ SerializableObjects:
   gameObject: 61daac5fddf54ef0898826b3dbca2615
   localEnabled: true
   moveSpeed: 3
+  detectUpSpeed: 0.001
+  jumpImpulse: 1
 - !Rigidbody
   instanceId: a86213496c0d4136b67089db3849c9be
   gameObject: 61daac5fddf54ef0898826b3dbca2615
@@ -186,7 +188,6 @@ SerializableObjects:
     z: 1
   linearDrag: 0.05
   angularDrag: 0.05
-  ignoreGravity: true
 - !GameObject
   instanceId: 74836d04cb5147daa06722c8b0232109
   name: Weapon
@@ -195,10 +196,13 @@ SerializableObjects:
   components:
   - 68f923c84fe84f5198c58b700175e935
   - 1bd6afdfede3456c98dd7edc85faa2da
+  - 3c5a0cce6d7d423da6e134a2d5daac86
 - !Transform
   instanceId: 68f923c84fe84f5198c58b700175e935
   gameObject: 74836d04cb5147daa06722c8b0232109
   parent: 558116e3d908424aafb414bbccf025ef
+  children:
+  - 06129bc073f54593930be2e7e72a28eb
   Position:
     x: 0.5
     y: 0.3
@@ -219,6 +223,11 @@ SerializableObjects:
   materials:
   - e7a533a296da4847927d1cf502ae2b45
   - e7a533a296da4847927d1cf502ae2b45
+- !Weapon
+  instanceId: 3c5a0cce6d7d423da6e134a2d5daac86
+  gameObject: 74836d04cb5147daa06722c8b0232109
+  localEnabled: true
+  reloadRate: 0.1
 - !GameObject
   instanceId: d940274480e64050a4c1b2fc3fb428f9
   name: PlayerView
@@ -244,3 +253,23 @@ SerializableObjects:
   model: 48712e3d3ad4452788027686701e3cbc
   materials:
   - 21d0d027ce40447e9af748932039a556
+- !GameObject
+  instanceId: a1f86aa9e6d44d51bbd94ec3191ea9c7
+  name: ShootPoint
+  localEnabled: true
+  transform: 06129bc073f54593930be2e7e72a28eb
+  components:
+  - 06129bc073f54593930be2e7e72a28eb
+- !Transform
+  instanceId: 06129bc073f54593930be2e7e72a28eb
+  gameObject: a1f86aa9e6d44d51bbd94ec3191ea9c7
+  parent: 68f923c84fe84f5198c58b700175e935
+  Position:
+    y: 0.5
+    z: 5
+  Rotation:
+    w: 1
+  Scale:
+    x: 1
+    y: 1
+    z: 1
